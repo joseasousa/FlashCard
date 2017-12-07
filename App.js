@@ -1,18 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View, Text} from 'react-native';
+import { TabNavigator } from 'react-navigation';
+import Decks from './src/pages/Decks';
+import Deck from './src/pages/Deck';
+import { Provider } from 'react-redux';
+import Routes from './src/Routes';
+import store from './store';
+
+
 import './ReactotronConfig';
 
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-      {console.log('teste')}
-        <Text>Open up App.js to start working on your app!</Text>
-        
-      </View>
-    );
-  }
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -22,3 +19,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 });
+
+const App = () => (
+  <View style={styles.container}>
+    <Routes />
+  </View>
+);
+
+export default App;
