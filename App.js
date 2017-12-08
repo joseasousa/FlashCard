@@ -1,29 +1,25 @@
 import React from 'react';
-import { StyleSheet, View, Text} from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
+import { Provider } from 'react-redux';
 import { TabNavigator } from 'react-navigation';
 import Decks from './src/pages/Decks';
 import Deck from './src/pages/Deck';
-import { Provider } from 'react-redux';
-import Routes from './src/Routes';
 import store from './store';
-
-
 import './ReactotronConfig';
 
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const Routes = TabNavigator({
+  Decks: {
+    screen: Decks,
+  },
+  Deck: {
+    screen: Deck,
   },
 });
 
 const App = () => (
-  <View style={styles.container}>
+  <Provider store={store} >
     <Routes />
-  </View>
+  </Provider>
 );
 
 export default App;

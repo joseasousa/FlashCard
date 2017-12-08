@@ -6,11 +6,6 @@ function Decks() {
     <View>
       <Text>Decks</Text>
       <Text>Decks</Text>
-      <Text>Decks</Text>
-      <Text>Decks</Text>
-      <Text>Decks</Text>
-      <Text>Decks</Text>
-      
     </View>
   );
 }

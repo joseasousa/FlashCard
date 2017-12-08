@@ -13,7 +13,7 @@ function Deck() {
       <Text>Deck</Text>
 
       <Text>Deck</Text>
-      
+
     </View>
   );
 }

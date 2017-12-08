@@ -1,10 +1,10 @@
 import * as ActionTypes from '../types';
 
-const fixtures = {
+const InitialState = {
   decks: [],
 };
 
-export default function (state = fixtures, action) {
+export default function (state = InitialState, action) {
   switch (action.type) {
     case ActionTypes.ADD_DECK:
       return [...state, action.deck];
