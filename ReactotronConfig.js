@@ -5,7 +5,8 @@ import Reactotron, {
   asyncStorage,
   networking,
 } from 'reactotron-react-native';
-import { reactotronRedux } from 'reactotron-redux';
+import {reactotronRedux} from 'reactotron-redux';
+
 
 const tron = Reactotron
   .configure({
@@ -13,10 +14,9 @@ const tron = Reactotron
   })
   .use(trackGlobalErrors())
   .use(openInEditor())
-  .use(reactotronRedux())
   .use(overlay())
   .use(asyncStorage())
   .use(networking())
   .connect();
 
-global.console.log = tron.log;
+global.tron = tron;
