@@ -5,15 +5,6 @@ function Deck() {
   return (
     <View>
       <Text>Deck</Text>
-
-      <Text>Deck</Text>
-
-      <Text>Deck</Text>
-
-      <Text>Deck</Text>
-
-      <Text>Deck</Text>
-      
     </View>
   );
 }

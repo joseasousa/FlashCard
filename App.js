@@ -1,12 +1,10 @@
 import React from 'react';
-import { StyleSheet, View, Text} from 'react-native';
-import { TabNavigator, StackNavigator  } from 'react-navigation';
+import { Provider } from 'react-redux';
+import { TabNavigator } from 'react-navigation';
 import Decks from './src/pages/Decks';
 import Deck from './src/pages/Deck';
-import { Provider } from 'react-redux';
 import store from './store';
-//import Routes from './src/Routes';
-
+import './ReactotronConfig';
 
 const Routes = TabNavigator({
   Decks: {
@@ -16,23 +14,11 @@ const Routes = TabNavigator({
     screen: Deck,
   },
 });
-import './ReactotronConfig';
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 const App = () => (
-  <View style={styles.container}>
-    <Text>oi</Text>
+  <Provider store={store} >
     <Routes />
-  </View>
+  </Provider>
 );
 
 export default App;
