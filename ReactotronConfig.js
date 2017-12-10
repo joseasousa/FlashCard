@@ -1,22 +1,16 @@
-import Reactotron, {
-  trackGlobalErrors,
-  openInEditor,
-  overlay,
-  asyncStorage,
-  networking,
-} from 'reactotron-react-native';
-import {reactotronRedux} from 'reactotron-redux';
+import Reactotron from 'reactotron-react-native';
+import { reactotronRedux } from 'reactotron-redux';
 
 
-const tron = Reactotron
-  .configure({
-    name: 'Flash Card',
-  })
-  .use(trackGlobalErrors())
-  .use(openInEditor())
-  .use(overlay())
-  .use(asyncStorage())
-  .use(networking())
-  .connect();
+if (__DEV__) {
+  const tron = Reactotron
+    .configure()
+    .useReactNative()
+    .use(reactotronRedux())
+    .connect();
 
-global.tron = tron;
+  tron.clear();
+
+  console.tron = tron;
+}
+
