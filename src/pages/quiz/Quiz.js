@@ -51,7 +51,7 @@ class Quiz extends PureComponent {
     this.setState({
       showAnswer: true,
     });
-  
+
   handleAnswerQuestion = isAnswerCorrect => async () => {
     await this.props.actions.answerQuestion(isAnswerCorrect);
 

@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import { View, Text } from 'react-native';
 import format from 'date-fns/format';
 
 import { Card } from '../../../components/common';
@@ -9,8 +8,8 @@ class Deck extends PureComponent {
     const { questions } = this.props;
 
     return questions.length === 0 || questions.length > 1 ?
-    `${questions.length} questions` :
-    '1 question'
+      `${questions.length} questions` :
+      '1 question';
   }
 
   render() {

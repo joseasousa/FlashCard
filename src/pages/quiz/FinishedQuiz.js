@@ -41,16 +41,14 @@ class FinishedQuiz extends PureComponent {
   }
 
   handleGoBackToDeck = () =>
-    this.props.navigation.goBack(
-      this.props.navigation.state.params.deckDetailRouteKey,
-    );
+    this.props.navigation.goBack(this.props.navigation.state.params.deckDetailRouteKey);
 
   handleRestartQuiz = () =>
     this.setState({
       isRestartingQuiz: true,
     }, () => {
       this.props.actions.restartQuiz();
-      
+
       this.props.navigation.goBack();
     });
 

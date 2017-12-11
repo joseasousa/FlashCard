@@ -1,15 +1,16 @@
 import React, { PureComponent } from 'react';
 import {
   View,
-  Text,
   FlatList,
   StyleSheet,
+
 } from 'react-native';
 import { connect } from 'react-redux';
 
 import Deck from './components/Deck';
 
-import { Button, Loading } from '../../components/common';
+import { Button } from '../../components/common';
+
 
 class DeckList extends PureComponent {
   static navigationOptions = {
@@ -42,7 +43,7 @@ class DeckList extends PureComponent {
         />
 
         <Button
-          label="Create Deck"
+          label="Add"
           onPress={this.handleGoToCreateDeck}
         />
       </View>
@@ -54,12 +55,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    
     padding: 10,
+    alignItems: 'center',
   },
   deckList: {
     width: '100%',
-    justifyContent: 'space-between',
   },
 });
 

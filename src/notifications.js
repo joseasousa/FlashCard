@@ -3,9 +3,7 @@ import startOfTomorrow from 'date-fns/start_of_tomorrow';
 import addHours from 'date-fns/add_hours';
 
 export const requestNotificationPermission = async () => {
-  const { status } = await Permissions.askAsync(
-    Permissions.NOTIFICATIONS,
-  );
+  const { status } = await Permissions.askAsync(Permissions.NOTIFICATIONS);
 
   return status === 'granted';
 };

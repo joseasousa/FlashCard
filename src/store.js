@@ -1,7 +1,6 @@
 import {
   createStore,
   combineReducers,
-  applyMiddleware,
   compose,
 } from 'redux';
 import { autoRehydrate } from 'redux-persist';
@@ -12,9 +11,7 @@ const rootReducer = combineReducers(reducers);
 
 const store = createStore(
   rootReducer,
-  compose(
-    autoRehydrate(),
-  ),
+  compose(autoRehydrate()),
 );
 
 export default store;

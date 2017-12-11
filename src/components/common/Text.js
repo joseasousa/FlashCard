@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import { Text as RNText, TextProperties, StyleSheet } from 'react-native';
 
 class Text extends PureComponent {
@@ -13,7 +12,7 @@ class Text extends PureComponent {
         style={[styles.text, style]}
         {...this.props}
       />
-    )
+    );
   }
 }
 

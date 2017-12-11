@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { AsyncStorage, View, Text, StyleSheet } from 'react-native';
+import { AsyncStorage } from 'react-native';
 import { Font } from 'expo';
 import { persistStore } from 'redux-persist';
 
@@ -52,8 +52,7 @@ class FlashCards extends PureComponent {
     }, () =>
       this.setState({
         isRehydrating: false,
-      }),
-    );
+      }));
 
   render() {
     const { isRehydrating, isLoadingFont } = this.state;

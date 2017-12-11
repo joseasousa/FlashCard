@@ -1,4 +1,4 @@
-import { TabNavigator, StackNavigator } from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
 
 import DeckList from './pages/deck/DeckList';
 import DeckDetail from './pages/deck/DeckDetail';

@@ -30,7 +30,7 @@ export default handleActions(
     [TYPES.ADD_QUESTION]: (state, { payload }) => {
       const { deckId, ...question } = payload;
 
-      const decks = [ ...state.decks ];
+      const decks = [...state.decks];
       const deck = decks.filter(({ id }) => id === deckId)[0];
 
       deck.questions = [

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { View, StyleSheet } from 'react-native';
 
@@ -6,7 +6,7 @@ import { addQuestion } from '../../redux/deck';
 
 import { TextInput, Button } from '../../components/common';
 
-class DeckDetail extends PureComponent {
+class DeckDetail extends Component {
   state = {
     title: '',
     answer: '',
@@ -20,7 +20,7 @@ class DeckDetail extends PureComponent {
   componentDidUpdate(nextProps, nextState) {
     if (nextState.title !== this.state.title || nextState.answer !== this.state.answer) {
       return this.handleCheckFormValidity();
-    } 
+    }
   }
 
   handleCheckFormValidity = () =>
@@ -53,13 +53,13 @@ class DeckDetail extends PureComponent {
     return (
       <View style={styles.container}>
         <TextInput
-          placeholder="What's the question?"
+          placeholder="Question?"
           onChangeText={this.handleChangeField('title')}
           value={title}
         />
 
         <TextInput
-          placeholder="...and the answer?"
+          placeholder="Answer?"
           onChangeText={this.handleChangeField('answer')}
           value={answer}
         />

@@ -48,12 +48,10 @@ export default handleActions(
             ...question,
             isAnswerCorrect,
           } : question
-        ),
-      );
+      ));
 
       const currentQuestionIndex = questions.findIndex((question, index) =>
-        index === state.currentQuestionIndex,
-      );
+        index === state.currentQuestionIndex);
 
       const isFinished = currentQuestionIndex === (questions.length - 1);
 
@@ -68,7 +66,7 @@ export default handleActions(
       };
     },
 
-    [TYPES.CALCULATE_STATS]: state => {
+    [TYPES.CALCULATE_STATS]: (state) => {
       const correctAnswers = state.chosenDeck.questions.filter(({ isAnswerCorrect }) => isAnswerCorrect);
       const questionsLength = state.chosenDeck.questions.length;
 

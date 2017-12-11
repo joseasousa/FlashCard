@@ -43,8 +43,8 @@ class DeckDetail extends PureComponent {
     const { questions } = this.state.deck;
 
     return questions.length === 0 || questions.length > 1 ?
-    `${questions.length} questions` :
-    '1 question'
+      `${questions.length} questions` :
+      '1 question';
   }
 
   render() {

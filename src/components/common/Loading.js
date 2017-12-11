@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { View, ActivityIndicator, Image, StyleSheet } from 'react-native';
+import { View, ActivityIndicator, StyleSheet } from 'react-native';
 
 class Loading extends PureComponent {
   render() {
