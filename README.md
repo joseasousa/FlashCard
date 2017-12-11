@@ -6,7 +6,7 @@ React Native project for React Nanodegree from Udacity.
 
 ```sh
 git https://github.com/joseasousa/FlashCard.git
-cd readable/api-server
+cd FlashCard
 yarn
 yarn start
 ```
