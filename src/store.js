@@ -1,22 +1,20 @@
 import {
   createStore,
-  compose,
+  combineReducers,
   applyMiddleware,
+  compose,
 } from 'redux';
-import {
-  persistStore,
-  autoRehydrate,
-} from 'redux-persist';
-import { AsyncStorage } from 'react-native';
+import { autoRehydrate } from 'redux-persist';
 
-import reducers from './reducers';
+import reducers from './redux';
+
+const rootReducer = combineReducers(reducers);
 
 const store = createStore(
-  reducers,
-  applyMiddleware(autoRehydrate()),
+  rootReducer,
+  compose(
+    autoRehydrate(),
+  ),
 );
 
-persistStore(store, { storage: AsyncStorage });
-
 export default store;
-

@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   View,
+  Text,
   FlatList,
   StyleSheet,
 } from 'react-native';
@@ -10,9 +11,9 @@ import Deck from './components/Deck';
 
 import { Button, Loading } from '../../components/common';
 
-class DeckList extends Component {
+class DeckList extends PureComponent {
   static navigationOptions = {
-    headerTitle: 'Deck',
+    headerTitle: 'Decks',
   };
 
   handleGoToCreateDeck = () =>
@@ -52,12 +53,13 @@ class DeckList extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
+    
     padding: 10,
   },
   deckList: {
     width: '100%',
+    justifyContent: 'space-between',
   },
 });
 

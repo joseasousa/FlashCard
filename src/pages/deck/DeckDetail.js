@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { View, StyleSheet } from 'react-native';
 
 import { Text, Button } from '../../components/common';
 
-class DeckDetail extends Component {
+class DeckDetail extends PureComponent {
   static navigationOptions = {
     headerTitle: 'Deck Detail',
   };

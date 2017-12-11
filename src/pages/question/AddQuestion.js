@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { View, StyleSheet } from 'react-native';
 
-import { addQuestion } from '../../reducers';
+import { addQuestion } from '../../redux/deck';
 
 import { TextInput, Button } from '../../components/common';
 

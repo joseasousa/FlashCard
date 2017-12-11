@@ -1,16 +1,20 @@
 import { createAction, handleActions } from 'redux-actions';
-import * as ActionTypes from '../types';
 
 const initialState = {
   decks: [],
 };
 
-export const createDeck = createAction(ActionTypes.CREATE_DECK);
-export const addQuestion = createAction(ActionTypes.ADD_QUESTION);
+export const TYPES = {
+  CREATE_DECK: 'CREATE_DECK',
+  ADD_QUESTION: 'ADD_QUESTION',
+};
+
+export const createDeck = createAction(TYPES.CREATE_DECK);
+export const addQuestion = createAction(TYPES.ADD_QUESTION);
 
 export default handleActions(
   {
-    [ActionTypes.CREATE_DECK]: (state, { payload: deck }) => ({
+    [TYPES.CREATE_DECK]: (state, { payload: deck }) => ({
       ...state,
       decks: [
         ...state.decks,
@@ -23,10 +27,10 @@ export default handleActions(
       ],
     }),
 
-    [ActionTypes.ADD_QUESTION]: (state, { payload }) => {
+    [TYPES.ADD_QUESTION]: (state, { payload }) => {
       const { deckId, ...question } = payload;
 
-      const decks = [...state.decks];
+      const decks = [ ...state.decks ];
       const deck = decks.filter(({ id }) => id === deckId)[0];
 
       deck.questions = [

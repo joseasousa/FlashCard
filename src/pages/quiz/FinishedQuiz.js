@@ -11,7 +11,7 @@ import {
   calculateStats,
   restartQuiz,
   clearQuiz,
-} from '../../reducers';
+} from '../../redux/quiz';
 
 import { Text, Button, Loading } from '../../components/common';
 

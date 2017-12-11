@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import {
   TextInput as RNTextInput,
   TextInputProperties,
@@ -16,17 +17,17 @@ class TextInput extends PureComponent {
         style={[styles.textInput, style]}
         {...this.props}
       />
-    );
+    )
   }
 }
 
 const styles = StyleSheet.create({
   textInput: {
     width: '100%',
-    fontFamily: 'Rubik-Regular',
     padding: 10,
     fontSize: 13,
     backgroundColor: 'white',
+    borderRadius: 10,
     marginVertical: 5,
   },
 });

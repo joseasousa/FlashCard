@@ -1,8 +1,12 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { View, TouchableOpacity, StyleSheet } from 'react-native';
+import { 
+  View, 
+  TouchableOpacity, 
+  StyleSheet 
+} from 'react-native';
 
-import Text from './Text';
+import { Text } from './';
 
 class Button extends PureComponent {
   static defaultProps = {
@@ -59,7 +63,7 @@ const styles = StyleSheet.create({
     width: 130,
   },
   primaryContainer: {
-    backgroundColor: 'black',
+    backgroundColor: '#490',
   },
   secondaryContainer: {
     backgroundColor: 'white',

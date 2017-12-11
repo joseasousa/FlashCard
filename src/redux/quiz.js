@@ -1,5 +1,4 @@
 import { createAction, handleActions } from 'redux-actions';
-import * as ActionTypes from '../types';
 
 const initialState = {
   chosenDeck: null,
@@ -11,40 +10,50 @@ const initialState = {
   },
 };
 
-export const setChosenDeck = createAction(ActionTypes.SET_CHOSEN_DECK);
-export const clearQuiz = createAction(ActionTypes.CLEAR_QUIZ);
-export const restartQuiz = createAction(ActionTypes.RESTART_QUIZ);
+export const TYPES = {
+  SET_CHOSEN_DECK: 'SET_CHOSEN_DECK',
+  CLEAR_QUIZ: 'CLEAR_QUIZ',
+  RESTART_QUIZ: 'RESTART_QUIZ',
+  ANSWER_QUESTION: 'ANSWER_QUESTION',
+  CALCULATE_STATS: 'CALCULATE_STATS',
+};
 
-export const answerQuestion = createAction(ActionTypes.ANSWER_QUESTION);
+export const setChosenDeck = createAction(TYPES.SET_CHOSEN_DECK);
+export const clearQuiz = createAction(TYPES.CLEAR_QUIZ);
+export const restartQuiz = createAction(TYPES.RESTART_QUIZ);
 
-export const calculateStats = createAction(ActionTypes.CALCULATE_STATS);
+export const answerQuestion = createAction(TYPES.ANSWER_QUESTION);
+
+export const calculateStats = createAction(TYPES.CALCULATE_STATS);
 
 export default handleActions(
   {
-    [ActionTypes.SET_CHOSEN_DECK]: (state, { payload: chosenDeck }) => ({
+    [TYPES.SET_CHOSEN_DECK]: (state, { payload: chosenDeck }) => ({
       ...state,
       chosenDeck,
       currentQuestionIndex: 0,
     }),
 
-    [ActionTypes.CLEAR_QUIZ]: state => initialState,
+    [TYPES.CLEAR_QUIZ]: state => initialState,
 
-    [ActionTypes.RESTART_QUIZ]: state => ({
+    [TYPES.RESTART_QUIZ]: state => ({
       ...initialState,
       chosenDeck: state.chosenDeck,
     }),
 
-    [ActionTypes.ANSWER_QUESTION]: (state, { payload: isAnswerCorrect }) => {
+    [TYPES.ANSWER_QUESTION]: (state, { payload: isAnswerCorrect }) => {
       const questions = state.chosenDeck.questions.map((question, index) => (
         index === state.currentQuestionIndex ?
           {
             ...question,
             isAnswerCorrect,
           } : question
-      ));
+        ),
+      );
 
       const currentQuestionIndex = questions.findIndex((question, index) =>
-        index === state.currentQuestionIndex);
+        index === state.currentQuestionIndex,
+      );
 
       const isFinished = currentQuestionIndex === (questions.length - 1);
 
@@ -59,7 +68,7 @@ export default handleActions(
       };
     },
 
-    [ActionTypes.CALCULATE_STATS]: (state) => {
+    [TYPES.CALCULATE_STATS]: state => {
       const correctAnswers = state.chosenDeck.questions.filter(({ isAnswerCorrect }) => isAnswerCorrect);
       const questionsLength = state.chosenDeck.questions.length;
 

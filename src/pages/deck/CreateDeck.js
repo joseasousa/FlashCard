@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import React, { PureComponent } from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 
-import { createDeck } from '../../reducers';
+import { createDeck } from '../../redux/deck';
 
 import { TextInput, Button } from '../../components/common';
 
-class CreateDeck extends Component {
+class CreateDeck extends PureComponent {
   state = {
     name: '',
     isFormValid: false,
@@ -43,7 +43,7 @@ class CreateDeck extends Component {
     return (
       <View style={styles.container}>
         <TextInput
-          placeholder="What's the title of the deck?"
+          placeholder="Deck title?"
           onChangeText={this.handleChangeName}
           value={name}
         />

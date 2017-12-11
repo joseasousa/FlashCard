@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { ScrollView, View, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 
-import { setChosenDeck, answerQuestion } from '../../reducers';
+import { setChosenDeck, answerQuestion } from '../../redux/quiz';
 
 import { Loading, Text, Button } from '../../components/common';
 
